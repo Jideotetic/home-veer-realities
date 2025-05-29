@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 // import { DeployButton } from "@/components/deploy-button";
 // import { EnvVarWarning } from "@/components/env-var-warning";
@@ -11,20 +11,77 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Carrot } from "lucide-react";
-// import { useState } from "react";
-// import { ProductCard } from "@/components/product-card";
-// import { Product } from "@/lib/types";
+import { ArrowRight, BookOpen, Carrot } from "lucide-react";
+import { useState } from "react";
+import { ProductCard } from "@/components/product-card";
+import { Product } from "@/lib/types";
 
 export default function Home() {
-  // const [featuredEbooks, setFeaturedEbooks] = useState<Product[]>([]);
-  // const [featuredGroceries, setFeaturedGroceries] = useState<Product[]>([]);
+  const [featuredEbooks] = useState<Product[]>([
+    {
+      id: "3",
+      name: "React for Beginners",
+      description:
+        "Learn React from the ground up with this beginner-friendly guide.",
+      image: "/image.png",
+      price: 14.99,
+      type: "ebook",
+      dataAiHint: "react-ebook-image",
+    },
+    {
+      id: "5",
+      name: "Advanced TypeScript",
+      description: "Master TypeScript with this in-depth technical ebook.",
+      image: "/image.png",
+      price: 19.99,
+      type: "ebook",
+      dataAiHint: "typescript-ebook-image",
+    },
+    {
+      id: "6",
+      name: "Advanced TypeScript",
+      description: "Master TypeScript with this in-depth technical ebook.",
+      image: "/image.png",
+      price: 19.99,
+      type: "ebook",
+      dataAiHint: "typescript-ebook-image",
+    },
+  ]);
+  const [featuredGroceries] = useState<Product[]>([
+    {
+      id: "1",
+      name: "Organic Bananas",
+      description: "Fresh organic bananas, perfect for a healthy snack.",
+      image: "/image.png",
+      price: 2.99,
+      type: "grocery",
+      dataAiHint: "bananas-image",
+    },
+    {
+      id: "2",
+      name: "Whole Wheat Bread",
+      description: "Soft, delicious, and made with whole grains.",
+      image: "/image.png",
+      price: 3.49,
+      type: "grocery",
+      dataAiHint: "bread-image",
+    },
+    {
+      id: "4",
+      name: "Almond Milk",
+      description: "Unsweetened almond milk, dairy-free and delicious.",
+      image: "/image.png",
+      price: 3.29,
+      type: "grocery",
+      dataAiHint: "almond-milk-image",
+    },
+  ]);
   return (
     <>
-      <div className="relative py-12 bg-white overflow-hidden min-h-screen flex items-center justify-center">
+      <div className="relative py-12 overflow-hidden min-h-screen flex items-center justify-center w-full bg-gradient-to-t from-[#c7ea465f] to-white lg:bg-gradient-to-r lg:from-[#c7ea465f] lg:to-white">
         <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-6xl mx-auto">
-            <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16 xl:gap-x-24">
+            <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16">
               <div className="max-w-lg mx-auto text-center lg:max-w-none lg:mx-0 lg:order-2 lg:text-left">
                 <Image
                   src={"/logo.png"}
@@ -73,7 +130,7 @@ export default function Home() {
                     alt="A plant"
                     height={1000}
                     width={1000}
-                    className="w-full h-full"
+                    className="w-full h-auto max-w-[490px] mx-auto"
                     priority
                   />
                 </div>
@@ -84,14 +141,61 @@ export default function Home() {
       </div>
 
       <div
-        className="relative py-12 bg-white overflow-hidden min-h-screen flex items-center justify-center"
+        className="relative py-12 overflow-hidden min-h-screen flex items-center justify-center w-full bg-gradient-to-t from-[#c7ea465f] to-white lg:bg-gradient-to-r lg:from-white lg:to-[#c7ea4628]"
         id="ebooks"
-      ></div>
+      >
+        <div className="relative px-4 mx-auto sm:px-6 lg:px-8 w-full max-w-5xl text-center text-sm">
+          <h2 className="text-3xl font-semibold mb-6 text-[#1a1f1a] flex items-center justify-center">
+            <BookOpen className="mr-3 h-7 w-7 text-[#C7EA46]" /> Featured Ebooks
+            <Link
+              href="/ebooks"
+              className="ml-auto text-sm text-primary hover:underline"
+            >
+              View All <ArrowRight className="inline h-4 w-4" />
+            </Link>
+          </h2>
+          {featuredEbooks.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {featuredEbooks.map((ebook) => (
+                <ProductCard key={ebook.id} product={ebook} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-muted-foreground text-center">
+              No ebooks available at the moment.
+            </p>
+          )}
+        </div>
+      </div>
 
       <div
-        className="relative py-12 bg-white overflow-hidden min-h-screen flex items-center justify-center"
+        className="relative py-12 bg-white overflow-hidden min-h-screen flex items-center justify-center w-full bg-gradient-to-t from-[#c7ea465f] to-white lg:bg-gradient-to-r lg:from-[#c7ea4628] lg:to-white"
         id="groceries"
-      ></div>
+      >
+        <div className="w-full max-w-5xl mx-auto text-center p-3 px-5 text-sm">
+          <h2 className="text-3xl font-semibold mb-6 text-[#1a1f1a] flex items-center justify-center">
+            <Carrot className="mr-3 h-7 w-7 text-[#FFD700]" /> Top Grocery Picks
+            <Link
+              href="/groceries"
+              className="ml-auto text-sm text-primary hover:underline"
+            >
+              View All <ArrowRight className="inline h-4 w-4" />
+            </Link>
+          </h2>
+
+          {featuredGroceries.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {featuredGroceries.map((grocery) => (
+                <ProductCard key={grocery.id} product={grocery} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-muted-foreground text-center">
+              No groceries available at the moment.
+            </p>
+          )}
+        </div>
+      </div>
 
       {/* <div className="w-full max-w-5xl mx-auto text-center p-3 px-5 text-sm">
         <h2 className="text-3xl font-semibold mb-6 text-[#1a1f1a] flex items-center justify-center">
