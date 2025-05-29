@@ -78,7 +78,7 @@ export default function Home() {
   ]);
   return (
     <>
-      <div className="relative py-12 overflow-hidden min-h-screen flex items-center justify-center w-full bg-gradient-to-t from-[#c7ea465f] to-white lg:bg-gradient-to-r lg:from-[#c7ea465f] lg:to-white">
+      <div className="relative py-12 overflow-hidden bg-white min-h-screen flex items-center justify-center w-full bg-gradient-to-t from-[#c7ea465f] to-white lg:bg-gradient-to-r lg:from-[#c7ea465f] lg:to-white">
         <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-6xl mx-auto">
             <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16">
@@ -96,7 +96,7 @@ export default function Home() {
                   <span className="text-[#C7EA46]"> Home Veer Realities</span>
                 </h1>
 
-                <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+                <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto">
                   Discover a world of edification for your soul and edible for
                   your journey.
                 </p>
@@ -127,7 +127,7 @@ export default function Home() {
                 <div className="relative">
                   <Image
                     src={"/image.png"}
-                    alt="A plant"
+                    alt="Grocery and Ebook Image"
                     height={1000}
                     width={1000}
                     className="w-full h-auto max-w-[490px] mx-auto"
@@ -141,7 +141,7 @@ export default function Home() {
       </div>
 
       <div
-        className="relative py-12 overflow-hidden min-h-screen flex items-center justify-center w-full bg-gradient-to-t from-[#c7ea465f] to-white lg:bg-gradient-to-r lg:from-white lg:to-[#c7ea4628]"
+        className="relative py-12 overflow-hidden bg-white min-h-screen flex items-center justify-center w-full bg-gradient-to-t from-[#c7ea465f] to-white lg:bg-gradient-to-r lg:from-white lg:to-[#c7ea4628]"
         id="ebooks"
       >
         <div className="relative px-4 mx-auto sm:px-6 lg:px-8 w-full max-w-5xl text-center text-sm">
@@ -149,7 +149,7 @@ export default function Home() {
             <BookOpen className="mr-3 h-7 w-7 text-[#C7EA46]" /> Featured Ebooks
             <Link
               href="/ebooks"
-              className="ml-auto text-sm text-primary hover:underline"
+              className="ml-auto text-sm text-gray-700 hover:underline"
             >
               View All <ArrowRight className="inline h-4 w-4" />
             </Link>
@@ -161,7 +161,7 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground text-center">
+            <p className="text-gray-700 text-center">
               No ebooks available at the moment.
             </p>
           )}
@@ -177,7 +177,7 @@ export default function Home() {
             <Carrot className="mr-3 h-7 w-7 text-[#FFD700]" /> Top Grocery Picks
             <Link
               href="/groceries"
-              className="ml-auto text-sm text-primary hover:underline"
+              className="ml-auto text-sm text-gray-700 hover:underline"
             >
               View All <ArrowRight className="inline h-4 w-4" />
             </Link>
@@ -190,7 +190,7 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground text-center">
+            <p className="text-gray-700 text-center">
               No groceries available at the moment.
             </p>
           )}
