@@ -21,94 +21,155 @@ export default function Home() {
   const [featuredGroceries, setFeaturedGroceries] = useState<Product[]>([]);
   return (
     <>
-      <div className="space-y-12 py-12">
-        <div className="w-full max-w-5xl mx-auto text-center p-3 px-5 text-sm">
-          <Image
-            src={"/logo.png"}
-            alt="Company logo"
-            height={100}
-            width={100}
-            className="w-32 mx-auto h-auto"
-            priority
-          />
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1a1f1a]">
-            Welcome to{" "}
-            <span className="text-[#C7EA46]">Home Veer Realities</span> Store
-          </h1>
+      {/* <div className="space-y-12 py-12"> */}
+      {/* <div className="w-full max-w-5xl mx-auto text-center p-5 text-sm min-h-screen border-2 border-red-500 flex flex-col items-center justify-center">
+        <Image
+          src={"/logo.png"}
+          alt="Company logo"
+          height={100}
+          width={100}
+          className="w-32 mx-auto h-auto"
+          priority
+        />
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1a1f1a]">
+          Welcome to <span className="text-[#C7EA46]">Home Veer Realities</span>
+        </h1>
 
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover a world of knowledge with our curated ebooks and stock up
-            on fresh, quality groceries. All in one place.
-          </p>
+        <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+          Discover a world of edification for your soul and edible for your
+          journey.
+        </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/ebooks" passHref>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-[#C7EA46] text-[#233a23] hover:bg-white hover:border-[#C7EA46] hover:text-[#C7EA46]"
-              >
-                <BookOpen className="mr-2 h-5 w-5" /> Explore Ebooks
-              </Button>
-            </Link>
-            <Link href="/groceries" passHref>
-              <Button
-                size="lg"
-                variant="outline"
-                className="hover:border-[#FFD700] hover:text-[#FFD700] hover:bg-white bg-[#FFD700] text-[#663d1f]"
-              >
-                <Carrot className="mr-2 h-5 w-5" /> Shop Groceries
-              </Button>
-            </Link>
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          <Link href="/ebooks" passHref>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-[#C7EA46] text-[#233a23] hover:bg-white hover:border-[#C7EA46] hover:text-[#C7EA46]"
+            >
+              <BookOpen className="mr-2 h-5 w-5" /> Explore Ebooks
+            </Button>
+          </Link>
+          <Link href="/groceries" passHref>
+            <Button
+              size="lg"
+              variant="outline"
+              className="hover:border-[#FFD700] hover:text-[#FFD700] hover:bg-white bg-[#FFD700] text-[#663d1f]"
+            >
+              <Carrot className="mr-2 h-5 w-5" /> Shop Groceries
+            </Button>
+          </Link>
+        </div>
+      </div> */}
+
+      <div className="relative py-12 bg-white overflow-hidden sm:py-16 lg:py-20 min-h-screen flex items-center justify-center">
+        <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16 xl:gap-x-24">
+              <div className="max-w-lg mx-auto text-center lg:max-w-none lg:mx-0 lg:order-2 lg:text-left">
+                <Image
+                  src={"/logo.png"}
+                  alt="Company logo"
+                  height={100}
+                  width={100}
+                  className="w-32 mx-auto h-auto"
+                  priority
+                />
+                <h1 className="text-3xl font-bold text-[#1a1f1a] tracking-tight lg:mt-8 sm:text-4xl xl:text-5xl xl:leading-tight">
+                  Welcome to
+                  <span className="text-[#C7EA46]"> Home Veer Realities</span>
+                </h1>
+
+                <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+                  Discover a world of edification for your soul and edible for
+                  your journey.
+                </p>
+
+                <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                  <Link href="/ebooks" passHref>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="bg-[#C7EA46] text-[#233a23] hover:bg-white hover:border-[#C7EA46] hover:text-[#C7EA46]"
+                    >
+                      <BookOpen className="mr-2 h-5 w-5" /> Explore Ebooks
+                    </Button>
+                  </Link>
+                  <Link href="/groceries" passHref>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="hover:border-[#FFD700] hover:text-[#FFD700] hover:bg-white bg-[#FFD700] text-[#663d1f]"
+                    >
+                      <Carrot className="mr-2 h-5 w-5" /> Shop Groceries
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="relative lg:order-1">
+                <div className="relative">
+                  <Image
+                    src={"/image.png"}
+                    alt="A plant"
+                    height={1000}
+                    width={1000}
+                    className="w-full h-full"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="w-full max-w-5xl mx-auto text-center p-3 px-5 text-sm">
-          <h2 className="text-3xl font-semibold mb-6 text-foreground flex items-center">
-            <BookOpen className="mr-3 h-7 w-7 text-primary" /> Featured Ebooks
-            <Link
+      {/* <div className="w-full max-w-5xl mx-auto text-center p-3 px-5 text-sm">
+        <h2 className="text-3xl font-semibold mb-6 text-[#1a1f1a] flex items-center justify-center">
+          <BookOpen className="mr-3 h-7 w-7 text-[#C7EA46]" /> Featured Ebooks
+          <Link
               href="/ebooks"
               className="ml-auto text-sm text-primary hover:underline"
             >
               View All <ArrowRight className="inline h-4 w-4" />
             </Link>
-          </h2>
-          {featuredEbooks.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {featuredEbooks.map((ebook) => (
-                <ProductCard key={ebook.id} product={ebook} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-muted-foreground">
-              No featured ebooks available at the moment.
-            </p>
-          )}
-        </div>
+        </h2>
+        {featuredEbooks.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {featuredEbooks.map((ebook) => (
+              <ProductCard key={ebook.id} product={ebook} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-muted-foreground">
+            No featured ebooks available at the moment.
+          </p>
+        )}
+      </div> */}
 
-        <div className="w-full max-w-5xl mx-auto text-center p-3 px-5 text-sm">
-          <h2 className="text-3xl font-semibold mb-6 text-foreground flex items-center">
-            <Carrot className="mr-3 h-7 w-7 text-primary" /> Top Grocery Picks
-            <Link
+      {/* <div className="w-full max-w-5xl mx-auto text-center p-3 px-5 text-sm">
+        <h2 className="text-3xl font-semibold mb-6 text-[#1a1f1a] flex items-center justify-center">
+          <Carrot className="mr-3 h-7 w-7 text-[#FFD700]" /> Top Grocery Picks
+          <Link
               href="/groceries"
               className="ml-auto text-sm text-primary hover:underline"
             >
               View All <ArrowRight className="inline h-4 w-4" />
             </Link>
-          </h2>
-          {featuredGroceries.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {featuredGroceries.map((grocery) => (
-                <ProductCard key={grocery.id} product={grocery} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-muted-foreground">
-              No featured groceries available at the moment.
-            </p>
-          )}
-        </div>
-      </div>
+        </h2>
+        {featuredGroceries.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {featuredGroceries.map((grocery) => (
+              <ProductCard key={grocery.id} product={grocery} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-muted-foreground">
+            No featured groceries available at the moment.
+          </p>
+        )}
+      </div> */}
+      {/* </div> */}
 
       {/* <main className="flex flex-col items-center">
         <div className="flex-1 w-full flex flex-col gap-20 items-center">
