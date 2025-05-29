@@ -1,24 +1,24 @@
-"use client";
+// "use client";
 
-import { DeployButton } from "@/components/deploy-button";
-import { EnvVarWarning } from "@/components/env-var-warning";
-import { AuthButton } from "@/components/auth-button";
-import { Hero } from "@/components/hero";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { ConnectSupabaseSteps } from "@/components/tutorial/connect-supabase-steps";
-import { SignUpUserSteps } from "@/components/tutorial/sign-up-user-steps";
-import { hasEnvVars } from "@/lib/utils";
+// import { DeployButton } from "@/components/deploy-button";
+// import { EnvVarWarning } from "@/components/env-var-warning";
+// import { AuthButton } from "@/components/auth-button";
+// import { Hero } from "@/components/hero";
+// import { ThemeSwitcher } from "@/components/theme-switcher";
+// import { ConnectSupabaseSteps } from "@/components/tutorial/connect-supabase-steps";
+// import { SignUpUserSteps } from "@/components/tutorial/sign-up-user-steps";
+// import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Carrot, ArrowRight } from "lucide-react";
-import { useState } from "react";
-import { ProductCard } from "@/components/product-card";
-import { Product } from "@/lib/types";
+import { BookOpen, Carrot } from "lucide-react";
+// import { useState } from "react";
+// import { ProductCard } from "@/components/product-card";
+// import { Product } from "@/lib/types";
 
 export default function Home() {
-  const [featuredEbooks, setFeaturedEbooks] = useState<Product[]>([]);
-  const [featuredGroceries, setFeaturedGroceries] = useState<Product[]>([]);
+  // const [featuredEbooks, setFeaturedEbooks] = useState<Product[]>([]);
+  // const [featuredGroceries, setFeaturedGroceries] = useState<Product[]>([]);
   return (
     <>
       <div className="relative py-12 bg-white overflow-hidden min-h-screen flex items-center justify-center">
