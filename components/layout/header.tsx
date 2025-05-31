@@ -16,7 +16,12 @@ import { Button } from "@/components/ui/button";
 // import { useCart } from "@/context/cart-context";
 // import { useAuth } from "@/context/auth-context"; // Import useAuth
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { useState } from "react";
 // import { toast } from "@/hooks/use-toast";
 
@@ -52,7 +57,7 @@ export function Header() {
   //     setCartItemCount(getItemCount());
   //   }, [cartItems, getItemCount]); // Depend on cartItems to re-calculate count when cart changes
 
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
 
   //   const handleSignOut = async () => {
   //     if (isSheetOpen) setIsSheetOpen(false);
@@ -137,38 +142,39 @@ export function Header() {
             priority
           />
         </Link>
-        {isMobile ? (
-          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-[300px] sm:w-[400px] bg-white p-6"
+        {/* {isMobile ? ( */}
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent
+            side="right"
+            className="w-[300px] sm:w-[400px] bg-white p-6"
+          >
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            {/* <Link
+              href="/"
+              className="text-xl font-bold text-primary mb-4 block"
+              onClick={() => setIsSheetOpen(false)}
             >
-              <Link
-                href="/"
-                className="text-xl font-bold text-primary mb-4 block"
-                onClick={() => setIsSheetOpen(false)}
-              >
-                <Image
-                  src={"/logo.png"}
-                  alt="Company logo"
-                  height={100}
-                  width={100}
-                  className="w-14 h-auto"
-                  priority
-                />
-              </Link>
-              {mobileNavLinks}
-            </SheetContent>
-          </Sheet>
-        ) : (
-          <nav className="flex items-center space-x-1">{navLinks}</nav>
-        )}
+              <Image
+                src={"/logo.png"}
+                alt="Company logo"
+                height={100}
+                width={100}
+                className="w-14 h-auto"
+                priority
+              />
+            </Link> */}
+            {mobileNavLinks}
+          </SheetContent>
+        </Sheet>
+        {/* ) : ( */}
+        <nav className="hidden md:flex items-center space-x-1">{navLinks}</nav>
+        {/* )} */}
       </div>
     </header>
   );
