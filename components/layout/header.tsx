@@ -15,7 +15,6 @@ import {
 import { Button } from "@/components/ui/button";
 // import { useCart } from "@/context/cart-context";
 // import { useAuth } from "@/context/auth-context"; // Import useAuth
-import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Sheet,
   SheetContent,
