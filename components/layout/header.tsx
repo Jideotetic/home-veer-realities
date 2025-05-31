@@ -33,10 +33,10 @@ const NavLink = ({
   children: React.ReactNode;
   onClick?: () => void;
 }) => (
-  <Link href={href} passHref>
+  <Link href={href} passHref className="w-fit">
     <Button
       variant="ghost"
-      className="text-foreground hover:bg-primary/20"
+      className="text-[#1a1f1a] hover:bg-[#C7EA46] hover:text-white"
       onClick={onClick}
     >
       {children}
@@ -49,7 +49,7 @@ export function Header() {
   //   const { user, signOut, isLoading: authLoading } = useAuth(); // Get user and signOut from useAuth
   const [cartItemCount] = useState(0);
   const [authLoading] = useState(false); // Simulating auth loading state
-  const [user] = useState(null);
+  const [user] = useState("null");
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   //   useEffect(() => {
@@ -77,7 +77,7 @@ export function Header() {
           </NavLink>
           <Button
             variant="ghost"
-            className="text-foreground hover:bg-destructive/20"
+            className="text-[#1a1f1a] hover:bg-destructive/20 hover:text-destructive"
             // onClick={handleSignOut}
           >
             <LogOut className="mr-2 h-5 w-5" /> Sign Out
@@ -131,7 +131,7 @@ export function Header() {
   return (
     <header className=" sticky top-0 z-50 w-full border-b border-border/40 bg-[#c7ea465f] backdrop-blur supports-[backdrop-filter]:bg-[#c7ea4636]">
       <div className="container flex h-16 max-w-7xl items-center justify-between mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-2xl font-bold text-gray-700">
+        <Link href="/">
           <Image
             src={"/logo.png"}
             alt="Company logo"
@@ -141,10 +141,11 @@ export function Header() {
             priority
           />
         </Link>
-        {/* {isMobile ? ( */}
+
+        {/* Mobile menu toggle */}
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
@@ -154,26 +155,11 @@ export function Header() {
             className="w-[300px] sm:w-[400px] bg-white p-6"
           >
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            {/* <Link
-              href="/"
-              className="text-xl font-bold text-primary mb-4 block"
-              onClick={() => setIsSheetOpen(false)}
-            >
-              <Image
-                src={"/logo.png"}
-                alt="Company logo"
-                height={100}
-                width={100}
-                className="w-14 h-auto"
-                priority
-              />
-            </Link> */}
             {mobileNavLinks}
           </SheetContent>
         </Sheet>
-        {/* ) : ( */}
-        <nav className="hidden md:flex items-center space-x-1">{navLinks}</nav>
-        {/* )} */}
+
+        <nav className="hidden lg:flex items-center space-x-1">{navLinks}</nav>
       </div>
     </header>
   );
