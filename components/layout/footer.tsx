@@ -3,14 +3,7 @@ import Image from "next/image";
 export function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    // <footer className="border-t border-border/40 bg-background">
-    //   <div className="container mx-auto py-6 text-center text-sm text-muted-foreground">
-    //     <p>&copy; {currentYear} eStore Central. All rights reserved.</p>
-    //     <p className="mt-1">Your one-stop shop for ebooks and groceries.</p>
-    //   </div>
-    // </footer>
-
-    <div className="py-12 bg-white">
+    <footer className="py-12 bg-white">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
@@ -189,6 +182,6 @@ export function Footer() {
           © {currentYear} Home Veer Realities. All rights reserved.
         </p>
       </div>
-    </div>
+    </footer>
   );
 }

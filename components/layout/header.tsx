@@ -49,7 +49,7 @@ export function Header() {
   //   const { user, signOut, isLoading: authLoading } = useAuth(); // Get user and signOut from useAuth
   const [cartItemCount] = useState(0);
   const [authLoading] = useState(false); // Simulating auth loading state
-  const [user] = useState("null");
+  const [user] = useState(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   //   useEffect(() => {
